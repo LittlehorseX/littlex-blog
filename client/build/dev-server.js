@@ -1,17 +1,17 @@
 const config = require('../config')
-if (!process.env.NODE_ENV) {
-  process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
-}
-
 const opn = require('opn')
 const path = require('path')
 const express = require('express')
 const webpack = require('webpack')
 const proxyMiddleware = require('http-proxy-middleware')
 const webpackConfig = require('./webpack.dev.conf')
+
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
+}
+
 const port = process.env.PORT || config.dev.port
 const proxyTable = config.dev.proxyTable
-
 const app = express()
 const compiler = webpack(webpackConfig)
 
@@ -33,7 +33,6 @@ compiler.plugin('compilation', function (compilation) {
 })
 
 app.use(hotMiddleware)
-
 // proxy api requests
 Object.keys(proxyTable).forEach(function (context) {
   let options = proxyTable[context]

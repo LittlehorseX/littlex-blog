@@ -37,7 +37,7 @@ export default {
     savepic () {
       const type = this.$store.state.tags
       if (type.length === 0) {
-        console.log('请选择分类')
+        this.$notice.open({type: 'error', content: '请选择分类'})
       } else {
         const para = {
           type,
@@ -46,9 +46,10 @@ export default {
         }
         api.uploadPic(para).then(res => {
           if (res.data.success) {
+            this.$notice.open({type: 'success', content: '上传图片成功'})
             this.$router.push({name: 'piclist', params: {type: type}})
           } else {
-            console.log('上传图片失败')
+            this.$notice.open({type: 'error', content: '上传图片失败'})
           }
         })
       }

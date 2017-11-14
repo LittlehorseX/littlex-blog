@@ -23,9 +23,9 @@ export default {
       articleList: []
     }
   },
-  mounted () {
+  async mounted () {
     this.$store.commit('setType', 'list')
-    api.getArticleList('life').then(res => {
+    await api.getArticleList('life').then(res => {
       this.articleList = res.data.data
     })
   },

@@ -9,7 +9,7 @@
 import MenuBar from 'common/menubar'
 
 export default {
-  name: 'work',
+  name: 'pic',
   components: {
     MenuBar
   },

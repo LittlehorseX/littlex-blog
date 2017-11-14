@@ -32,7 +32,7 @@ export default {
       this.$emit('curIndex', index)
       const line = document.getElementsByClassName('menuLine')[0]
       line.style.top = 20 + 64 * index + 'px'
-      line.style.transition = 'top 400ms cubic-bezier(0.145, 1.075, 0.345, 1.12) 100ms'
+      line.style.transition = 'all 400ms cubic-bezier(0.145, 1.075, 0.345, 1.12) 100ms'
     }
   }
 }

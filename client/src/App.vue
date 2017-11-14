@@ -26,7 +26,7 @@ a {
   cursor: pointer;
   color: #000;
 }
-div, input:focus {
+div, button, input:focus {
   outline: none;
 }
 </style>

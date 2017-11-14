@@ -1,0 +1,36 @@
+.notification {
+  position: fixed;
+  width: 580px;
+  top: 20px;
+  right: -300px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1010;
+}
+.notification-box {
+  width: 230px;
+  margin-left: 300px;
+  transition: all 300ms;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 8px 15px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.notification-warning {
+  background-color: peachpuff;
+}
+.notification-success {
+  background-color: rgb(200, 240, 197);
+}
+.notification-error {
+  background-color: pink;
+}
+..notification-info {
+  background-color: lightblue;
+}
+.notification .msg {
+  display: inline-block;
+  color: #444;
+  font-weight: bold;
+}

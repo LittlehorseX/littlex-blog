@@ -33,6 +33,17 @@ function uploadPic (para) {
   })
 }
 
+function updatePic (para) {
+  return axios({
+    method: 'post',
+    url: '/pic/update',
+    data: para,
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+}
+
 function getArticleCount () {
   return axios.get('/article/count')
 }
@@ -53,13 +64,28 @@ function getPicDetail (type, id) {
   return axios.get(`/pic/${type}/${id}`)
 }
 
+function delPic (id) {
+  return axios({
+    method: 'post',
+    url: '/pic/delete',
+    data: {
+      id
+    },
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+}
+
 module.exports = {
   createArticle,
   updateArticle,
   uploadPic,
+  updatePic,
   getArticleCount,
   getArticleList,
   getArticleDetail,
   getPicList,
-  getPicDetail
+  getPicDetail,
+  delPic
 }

@@ -61,7 +61,7 @@ export default {
   methods: {
     tagClick (tag) {
       if (this.$store.state.type === 'edit') {
-        let tags = this.$store.state.tags
+        let tags = this.$store.state.tags.length === 0 ? [] : this.$store.state.tags
         const index = tags.indexOf(tag)
         if (index === -1) {
           tags.push(tag)

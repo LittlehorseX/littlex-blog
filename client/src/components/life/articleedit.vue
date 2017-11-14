@@ -20,9 +20,9 @@ export default {
       const title = document.getElementById('title').value
       const id = this.$route.params.id
       if (this.$store.state.tags.length === 0) {
-        console.log('请选择标签')
+        this.$notice.open({type: 'error', content: '请选择标签'})
       } else if (title.length === 0) {
-        console.log('请填写标题')
+        this.$notice.open({type: 'error', content: '请填写标题'})
       } else {
         const editorRoom = document.getElementById('editorRoom')
         if (id === 'new') {
@@ -34,9 +34,10 @@ export default {
             lastEditTime: moment(Date.now()).format('YYYY-MM-DD HH:mm:ss')
           }).then(res => {
             if (res.data.success) {
+              this.$notice.open({type: 'success', content: '保存文章成功'})
               this.$router.push({name: 'lifedetail', params: {id: res.data.data._id}})
             } else {
-              console.log('保存文章失败')
+              this.$notice.open({type: 'error', content: '保存文章失败'})
             }
           })
         } else {
@@ -48,9 +49,10 @@ export default {
             lastEditTime: moment(Date.now()).format('YYYY-MM-DD HH:mm:ss')
           }).then(res => {
             if (res.data.success) {
+              this.$notice.open({type: 'success', content: '保存文章成功'})
               this.$router.push({name: 'lifedetail', params: {id}})
             } else {
-              console.log('保存文章失败')
+              this.$notice.open({type: 'error', content: '保存文章失败'})
             }
           })
         }
