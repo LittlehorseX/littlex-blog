@@ -87,13 +87,13 @@ async function articleList (ctx) {
     } else {
       data = res
     }
-    ctx.status = 200
-    ctx.body = {
-      success,
-      errmsg,
-      data
-    }
   })
+  ctx.status = 200
+  ctx.body = {
+    success,
+    errmsg,
+    data
+  }
 }
 
 async function articleDetail (ctx) {

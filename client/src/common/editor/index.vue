@@ -130,24 +130,22 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #edit {
-  width: 100%;
+  width: 70%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin: 25px 10% 25px 10%;
+  padding: 25px 10% 25px 10%;
 }
 #edit input {
   width: 100%;
   padding: 20px 15px;
   font-size: 26px;
-  box-sizing: border-box;
   border: none;
   border-bottom: 1px solid #d9d9d9;
 }
 #editor #toolbar {
   width: 100%;
   display: flex;
-  box-sizing: border-box;
   padding: 0 4px;
   background-color: #dedede;
 }

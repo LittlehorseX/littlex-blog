@@ -93,9 +93,9 @@ export default {
 <style scoped>
 #list {
   display: flex;
-  width: 100%;
+  width: 70%;
   height: 100%;
-  margin: 25px 10% 25px 8%;
+  padding: 25px 10% 25px 8%;
 }
 #list .picitem {
   width: 150px;
@@ -116,7 +116,6 @@ export default {
   height: 20px;
   margin-top: 10px;
   padding-left: 20px;
-  box-sizing: border-box;
 }
 #list .picitem .title {
   display: inline-block;
@@ -132,7 +131,6 @@ export default {
   cursor: pointer;
 }
 #list .picitem input {
-  box-sizing: border-box;
   width: 100%;
   height: 22px;
   border: 1px solid #000;

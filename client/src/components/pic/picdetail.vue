@@ -26,9 +26,9 @@ export default {
 #pic {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 70%;
   height: 100%;
-  margin: 25px 10% 25px 8%;
+  padding: 25px 10% 25px 8%;
 }
 #pic .picUrl {
   margin: 40px 40px;

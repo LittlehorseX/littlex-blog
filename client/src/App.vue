@@ -14,9 +14,11 @@ export default {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 html, body, #app {
   height: 100%;
+  /*color: #34495e;*/
 }
 ul {
   list-style: none
@@ -28,5 +30,8 @@ a {
 }
 div, button, input:focus {
   outline: none;
+}
+#article {
+
 }
 </style>

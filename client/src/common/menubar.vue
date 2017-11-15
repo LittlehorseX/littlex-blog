@@ -83,19 +83,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #menubar {
-  width: 300px;
+  width: 30%;
   height: 100%;
-  margin-left: 10%;
+  padding-left: 7%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .head {
-  margin: 40px;
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
+  margin: 20%;
+  width: 70%;
 }
 .head img {
   width: 100%;

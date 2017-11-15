@@ -3,7 +3,8 @@
 </template>
 
 <script>
-import Editor from 'common/editor/index'
+// import Editor from 'common/editor/index'
+import Editor from 'common/simplemde.vue'
 import api from '../../api/index.js'
 const moment = require('moment')
 

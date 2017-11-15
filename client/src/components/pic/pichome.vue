@@ -53,9 +53,9 @@ export default {
 #pic {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 70%;
   height: 100%;
-  margin-left: 10%;
+  padding-left: 10%;
 }
 .picList {
   display: flex;
