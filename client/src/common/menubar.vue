@@ -21,7 +21,7 @@
       <span @click="tagClick(item)" :class="['tag', {'curTag': $store.state.tags.indexOf(item) !== -1}]" v-for="item in tags[menuId]">{{item}}</span>
     </div>
     <div class="pictags" v-if="this.$store.state.menu === 'pic' && this.$store.state.type !== 'home' && this.$store.state.type !== 'list'">
-      <span @click="picTagClick(item)" :class="[`tag${index}`, {'curTag': $store.state.tags === item}]" v-for="(item, index) in tags.pic">{{item}}</span>
+      <span @click="picTagClick(item)" :class="[`tag${index}`, {'curTag': $store.state.tags[0] === item}]" v-for="(item, index) in tags.pic">{{item}}</span>
     </div>
   </div>
 </template>
@@ -73,7 +73,7 @@ export default {
     },
     picTagClick (tag) {
       if (this.$store.state.type === 'edit') {
-        this.$store.commit('setTags', tag)
+        this.$store.commit('setTags', [tag])
       }
     }
   }

@@ -1,6 +1,6 @@
 const Pic = require('../models/pic.js')
-// const fs = require('fs-promise')
-// const shortid = require('shortid');
+const fs = require('fs-promise')
+const shortid = require('shortid')
 
 module.exports.init = router => {
   router.post('/pic/upload', ctx => uploadPic(ctx))
@@ -12,9 +12,14 @@ module.exports.init = router => {
 
 async function uploadPic (ctx) {
   let data = {}, success = true, errmsg = ''
-  const pic = new Pic(ctx.request.body)
-  // const picId = shortid.generate()
-  // await fs.writeFile('upload/' + picId + '.png', new Buffer(ctx.request.body.picData.replace(/^data.*;base64,/, ''), 'base64'))
+  const para = ctx.request.body
+  const picId = shortid.generate()
+  await fs.writeFile('static/upload/' + picId + '.png', new Buffer(ctx.request.body.picData.replace(/^data.*;base64,/, ''), 'base64'))
+  const pic = new Pic({
+    title: para.title,
+    type: para.type,
+    url: 'static/upload/' + picId + '.png'
+  })
   await pic.save().then(res => {
     data = res
   }).catch(err => {

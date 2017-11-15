@@ -1,7 +1,7 @@
 <template>
   <div id="list">
     <div class="picitem" v-for="(item, index) in piclist">
-      <img :src="item.picData" alt="">
+      <img :src="item.url" alt="">
       <div v-if="editing[index] === false">
         <span class="title" v-on:click="editingStateChange(index)">{{item.title}}</span>
         <span class="delete" v-on:click="deletePic(item, index)"></span>
@@ -31,7 +31,7 @@ export default {
   },
   async mounted () {
     this.$store.commit('setType', 'list')
-    this.$store.commit('setTags', this.$route.params.type)
+    this.$store.commit('setTags', [this.$route.params.type])
     await api.getPicList(this.$route.params.type).then(res => {
       const data = res.data.data
       this.piclist = data

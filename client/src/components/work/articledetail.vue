@@ -26,11 +26,7 @@ export default {
     api.getArticleDetail(this.$route.params.id).then(res => {
       this.detailData = res.data.data
       this.$store.commit('setTags', res.data.data.tags)
-      let objE = document.createElement('div')
-      objE.innerHTML = res.data.data.content
-      objE.childNodes.forEach(item => {
-        this.$refs.myContent.append(item)
-      })
+      this.$refs.myContent.innerHTML = res.data.data.content
     })
   }
 }

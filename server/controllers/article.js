@@ -79,22 +79,21 @@ async function articleCount (ctx) {
 }
 
 async function articleList (ctx) {
-  let data = {}, success = true, errmsg = ''
+  let data = [], success = true, errmsg = ''
   await Article.find({type: ctx.params.type}, (err, res) => {
     if (err) {
       success = false
       errmsg = err
-    }
-    else {
+    } else {
       data = res
     }
+    ctx.status = 200
+    ctx.body = {
+      success,
+      errmsg,
+      data
+    }
   })
-  ctx.status = 200
-  ctx.body = {
-    success,
-    errmsg,
-    data
-  }
 }
 
 async function articleDetail (ctx) {

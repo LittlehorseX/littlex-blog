@@ -46,8 +46,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 50px;
-  margin-top: 15px;
+  /*padding: 20px 50px;*/
+  margin-top: 30px;
 }
 .articleItem strong {
   font-size: 20px;

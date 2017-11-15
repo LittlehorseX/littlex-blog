@@ -96,12 +96,13 @@ export default {
       api.getArticleDetail(id).then(res => {
         this.data.title = res.data.data.title
         this.$store.commit('setTags', res.data.data.tags)
-        let objE = document.createElement('div')
-        objE.innerHTML = res.data.data.content
-        this.data.content = objE.childNodes
-        objE.childNodes.forEach(item => {
-          this.$refs.editorRoom.append(item)
-        })
+        // let objE = document.createElement('div')
+        // objE.innerHTML = res.data.data.content
+        // this.data.content = objE.childNodes
+        // objE.childNodes.forEach(item => {
+        //   this.$refs.editorRoom.append(item)
+        // })
+        this.$refs.editorRoom.innerHTML = res.data.data.content
       })
     }
   },

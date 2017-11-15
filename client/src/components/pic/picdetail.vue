@@ -11,8 +11,8 @@ export default {
   data () {
     return {
       picData: {
-        url: require('../../assets/hhhh.png'),
-        title: '大大大大大大大傻子'
+        url: '',
+        title: ''
       }
     }
   },

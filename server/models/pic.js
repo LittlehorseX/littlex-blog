@@ -8,7 +8,7 @@ const Schema = mongoose.Schema
 const picSchema = new Schema({
   title: String,
   type: String,
-  picData: String
+  url: String
 })
 
 module.exports = mongoose.model('Pic', picSchema)
